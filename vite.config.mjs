@@ -6,7 +6,8 @@ import { fileURLToPath } from 'url';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig({
-  base: './',
+  // GitHub Pages 部署在 /donghai-portfolio/ 子路径下；workbuddy/本地开发用 './'
+  base: process.env.GH_PAGES ? '/donghai-portfolio/' : './',
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),

@@ -22,7 +22,7 @@ function App() {
     <>
       <TooltipProvider>
         <Toaster />
-        <BrowserRouter>
+        <BrowserRouter basename={import.meta.env.BASE_URL}>
           {/* 固定元素放在路由动画外部，避免参与页面过渡 */}
           <Navbar />
           <ScrollProgress />
