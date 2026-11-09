@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hero 对比 — 上一版 vs 当前版</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: #060919; overflow: hidden; font-family: monospace; }
+    .wrap { display: flex; width: 100vw; height: 100vh; }
+    .pane { position: relative; width: 50vw; height: 100vh; overflow: hidden; }
+    .pane iframe {
+      width: 200%; height: 200%; border: 0; display: block;
+      transform: scale(0.5); transform-origin: top left;
+    }
+    .tag {
+      position: absolute; top: 14px; z-index: 10;
+      padding: 6px 14px; font-size: 12px; letter-spacing: 0.2em;
+      color: #fff; background: rgba(0,0,0,0.55); border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 999px; pointer-events: none;
+    }
+    .left .tag { left: 14px; }
+    .right .tag { right: 14px; }
+    .divider { width: 2px; height: 100vh; background: rgba(255,255,255,0.5); z-index: 20; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="pane left">
+      <span class="tag">上一版 · 原背景 + 烘焙文字</span>
+      <iframe src="./index.html?v=old" title="old"></iframe>
+    </div>
+    <div class="divider"></div>
+    <div class="pane right">
+      <span class="tag">当前版 · 新背景 + 光团 + 粒子文字</span>
+      <iframe src="./index.html" title="new"></iframe>
+    </div>
+  </div>
+</body>
+</html>
